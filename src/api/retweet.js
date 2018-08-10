@@ -4,18 +4,18 @@ const config = require('../config')
 const isReply = require('../helpers/isReply')
 
 const param = config.twitterConfig
-const queryString = unique(param.queryString.split(','))
+//const queryString = unique(param.queryString.split(','))
 
 const bot = new Twit(config.twitterKeys)
 
 const retweet = () => {
-  const query = queryString()
+  const query = '#MedicalMarijuana, #Cannabis, #LegalizedCannabis, #CannabisNews, #Cannabiz, #Cannabizness, #Marijuana, #MMJ, #CBD, #CannabisLaw, #Hemp, #CannabisBusiness, #Dispensary'
 
   bot.get(
     'search/tweets',
     {
       q: query,
-      result_type: param.resultType,
+      result_type: 'popular',
       lang: param.language,
       filter: 'safe',
       count: param.searchCount
