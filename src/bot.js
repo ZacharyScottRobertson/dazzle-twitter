@@ -3,7 +3,7 @@ const Twit = require('twit')
 const config = require('./config.js')
 
 const Twitter = new Twit(config.twitterKeys)
-
+let dateTime = new Date();
 var retweet = function() {
   var params = {
       q: '#cannabis, #cbd, #mmj, #medicalmarijuana',  // REQUIRED
@@ -85,6 +85,7 @@ var favoriteTweet = function(){
       })
     }
   });
+  console.log(dateTime);
 }
 // grab & 'favorite' as soon as program is running...
 favoriteTweet();
